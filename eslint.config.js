@@ -3,20 +3,17 @@ import pluginJs from '@eslint/js';
 import jestPlugin from 'eslint-plugin-jest';
 
 export default [
-  // Global configuration
   {
     languageOptions: {
       globals: {
-        ...globals.browser, // Legger til browser-globals
-        ...globals.es2021, // Legger til ECMAScript 2021-globals
+        ...globals.browser,
+        ...globals.es2021,
       },
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
   },
-  // Base ESLint recommended rules
   pluginJs.configs.recommended,
-  // Jest specific configuration for test files
   {
     files: ['**/*.test.js'],
     plugins: {
@@ -24,12 +21,12 @@ export default [
     },
     rules: {
       ...jestPlugin.configs.recommended.rules,
-      'jest/prefer-expect-assertions': 'off', // Eksempel på å deaktivere en spesifikk regel
+      'jest/prefer-expect-assertions': 'off',
     },
     languageOptions: {
       globals: {
-        ...globals.jest, // Setter globale variabler for Jest-miljøet
-        global: 'readonly', // Definerer "global" som en global variabel i Jest-miljøet
+        ...globals.jest,
+        global: 'readonly',
       },
     },
   },
