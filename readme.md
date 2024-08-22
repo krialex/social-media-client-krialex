@@ -81,7 +81,7 @@ npm test
 Open Cypress for E2E-testing in the Cypress Test Runner:
 
 ```bash
-npm run test-e2e
+npm run test:e2e
 ```
 
 #### Test details

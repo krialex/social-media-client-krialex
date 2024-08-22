@@ -12,7 +12,9 @@
     "lint-fix": "eslint \"**/*.js\" --cache --fix",
     "prepare": "husky install",
     "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test-unit": "jest",
+    "test:e2e": "cypress open",
+    "test:e2e:headless": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
