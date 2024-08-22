@@ -40,6 +40,10 @@
       "prettier --write",
       "eslint --fix"
     ],
+    "**/*.cy.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
     "*.html": [
       "prettier --write"
     ],
