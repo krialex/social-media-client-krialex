@@ -21,7 +21,7 @@ To get a local copy of this project follow this next steps:
 1. **Clone the repo:**
 
 ```bash
-git clone URL HER
+git clone https://github.com/krialex/social-media-client-krialex/tree/workflow
 ```
 
 2. **Install dependencies:**
