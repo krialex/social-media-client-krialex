@@ -1,5 +1,8 @@
 describe('Invalid login', () => {
     beforeEach(() => {
+        cy.clearCookies();
+        cy.clearLocalStorage();
+        
       cy.visit('http://127.0.0.1:5500/');
     });  
 

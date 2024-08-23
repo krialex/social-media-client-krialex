@@ -1,5 +1,8 @@
 describe('Logout', () => {
     beforeEach(() => {
+        cy.clearCookies();
+        cy.clearLocalStorage();
+        
         cy.visit('http://127.0.0.1:5500/');
         cy.get('.modal-footer').find('button[data-bs-target="#loginModal"]').click();  
         cy.get('#registerModal')
