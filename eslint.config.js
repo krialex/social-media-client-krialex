@@ -13,12 +13,6 @@ export default [
         localStorage: 'readonly',
         URL: 'readonly',
         URLSearchParams: 'readonly',
-
-        module: 'readonly',
-        require: 'readonly',
-        process: 'readonly',
-        __dirname: 'readonly',
-        exports: 'readonly',
       },
     },
     rules: {
@@ -26,12 +20,19 @@ export default [
       'no-unused-vars': ['error', { vars: 'all', args: 'none', ignoreRestSiblings: false }],
       'cypress/no-unnecessary-waiting': 'off',
     },
-    plugins: {
-      cypress: cypressPlugin,
-    },
   },
   {
-    files: ['**/*.test.js'],
+    files: ['**/*.test.js', '**/*.spec.js'],
+    languageOptions: {
+      globals: {
+        jest: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+      },
+    },
     plugins: {
       jest: jestPlugin,
     },
@@ -42,6 +43,12 @@ export default [
   },
   {
     files: ['**/*.cy.js'],
+    languageOptions: {
+      globals: {
+        cy: 'readonly',
+        Cypress: 'readonly',
+      },
+    },
     plugins: {
       cypress: cypressPlugin,
     },
