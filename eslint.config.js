@@ -7,9 +7,27 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        localStorage: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+
+        module: 'readonly',
+        require: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+        exports: 'readonly',
+      },
     },
     rules: {
       ...pluginJs.configs.recommended.rules,
+      'no-unused-vars': ['error', { vars: 'all', args: 'none', ignoreRestSiblings: false }],
+      'cypress/no-unnecessary-waiting': 'off',
+    },
+    plugins: {
+      cypress: cypressPlugin,
     },
   },
   {
