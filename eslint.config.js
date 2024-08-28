@@ -7,22 +7,13 @@ export default [
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
-      globals: {
-        window: 'readonly',
-        document: 'readonly',
-        localStorage: 'readonly',
-        URL: 'readonly',
-        URLSearchParams: 'readonly',
-      },
     },
     rules: {
       ...pluginJs.configs.recommended.rules,
-      'no-unused-vars': ['error', { vars: 'all', args: 'none', ignoreRestSiblings: false }],
-      'cypress/no-unnecessary-waiting': 'off',
     },
   },
   {
-    files: ['**/*.test.js', '**/*.spec.js'],
+    files: ['**/*.test.js'],
     languageOptions: {
       globals: {
         jest: 'readonly',
@@ -31,6 +22,7 @@ export default [
         expect: 'readonly',
         beforeEach: 'readonly',
         afterEach: 'readonly',
+        global: 'readonly', 
       },
     },
     plugins: {
@@ -47,6 +39,7 @@ export default [
       globals: {
         cy: 'readonly',
         Cypress: 'readonly',
+        expect: 'readonly', 
       },
     },
     plugins: {
@@ -55,6 +48,23 @@ export default [
     rules: {
       ...cypressPlugin.configs.recommended.rules,
       'cypress/no-unnecessary-waiting': 'off',
+    },
+  },
+  {
+    files: ['**/*.js'], // Dette må kanskje spesifiseres mer presist
+    languageOptions: {
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        localStorage: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+        FormData: 'readonly', 
+        alert: 'readonly',    
+        fetch: 'readonly',    
+        Image: 'readonly',    
+        location: 'readonly', 
+      },
     },
   },
 ];
