@@ -40,6 +40,9 @@ export default [
         cy: 'readonly',
         Cypress: 'readonly',
         expect: 'readonly', 
+        describe: 'readonly',
+        beforeEach: 'readonly',
+        it: 'readonly',
       },
     },
     plugins: {
@@ -48,6 +51,7 @@ export default [
     rules: {
       ...cypressPlugin.configs.recommended.rules,
       'cypress/no-unnecessary-waiting': 'off',
+      'cypress/unsafe-to-chain-command': 'warn',
     },
   },
   {
