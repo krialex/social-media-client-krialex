@@ -2,12 +2,14 @@ describe('Login', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.clearLocalStorage();
-    
+
     cy.visit('http://127.0.0.1:5500/');
-  });         
+  });
 
   it('should log in with valid credentials', () => {
-    cy.get('.modal-footer').find('button[data-bs-target="#loginModal"]').click();  
+    cy.get('.modal-footer')
+      .find('button[data-bs-target="#loginModal"]')
+      .click();
     cy.get('#registerModal')
       .invoke('attr', 'style', 'display: none')
       .should('have.attr', 'style', 'display: none');
