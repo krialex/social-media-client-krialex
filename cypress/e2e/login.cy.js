@@ -3,7 +3,7 @@ describe('Login', () => {
     cy.clearCookies();
     cy.clearLocalStorage();
 
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('/');
   });
 
   it('should log in with valid credentials', () => {

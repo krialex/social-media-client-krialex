@@ -3,7 +3,7 @@ describe('Invalid login', () => {
     cy.clearCookies();
     cy.clearLocalStorage();
 
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('/');
   });
 
   it('should show an error message with invalid credentials', () => {
