@@ -62,9 +62,13 @@ jobs:
         run: npm install
       - name: Start live server
         run: npm run start &
+        env:
+          PORT: 8080
       - name: Wait for server to be ready
         run: npx wait-on http://127.0.0.1:8080
       - name: Run e2e tests
+        env:
+          CYPRESS_BASE_URL: http://127.0.0.1:8080
         run: npm run test:e2e:headless
 
   deploy:
