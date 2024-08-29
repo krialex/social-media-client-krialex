@@ -55,7 +55,7 @@ export default [
     },
   },
   {
-    files: ['**/*.js'], // Dette må kanskje spesifiseres mer presist
+    files: ['**/*.js'], 
     languageOptions: {
       globals: {
         window: 'readonly',

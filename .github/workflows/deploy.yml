@@ -61,7 +61,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run e2e tests
-        run: npm run test:e2e
+        run: npm run test:e2e:headless
 
   deploy:
     needs: [lint, unit-tests, e2e-tests]
