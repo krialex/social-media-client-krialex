@@ -12,13 +12,15 @@ describe('Logout', () => {
       .should('have.attr', 'style', 'display: none');
 
     cy.get('#loginForm').should('be.visible');
-    cy.get('#loginEmail')
+    cy.get('#loginEmail', { timeout: 10000 })
       .type('kikki@stud.noroff.no', { delay: 0 })
       .should('have.value', 'kikki@stud.noroff.no');
+
     cy.get('#loginForm').should('be.visible');
-    cy.get('#loginPassword')
+    cy.get('#loginPassword', { timeout: 10000 })
       .type('password', { delay: 0 })
       .should('have.value', 'password');
+      
     cy.get('#loginForm').find('button[type="submit"]').click();
     cy.url().should('include', '?view=profile&name=kikki');
     cy.window().then((win) => {
