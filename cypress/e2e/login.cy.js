@@ -18,6 +18,7 @@ describe('Login', () => {
     cy.get('#loginEmail')
       .type('kikki@stud.noroff.no', { delay: 0 })
       .should('have.value', 'kikki@stud.noroff.no');
+    cy.get('#loginForm').should('be.visible');
     cy.get('#loginPassword')
       .type('password', { delay: 0 })
       .should('have.value', 'password');

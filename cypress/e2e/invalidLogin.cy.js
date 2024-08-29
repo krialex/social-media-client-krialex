@@ -18,9 +18,10 @@ describe('Invalid login', () => {
     cy.get('#loginEmail')
       .type('invalid@hhh.no', { delay: 0 })
       .should('have.value', 'invalid@hhh.no');
+    cy.get('#loginForm').should('be.visible');
     cy.get('#loginPassword')
-      .type('wrongpassword', { delay: 0 })
-      .should('have.value', 'wrongpassword');
+      .type('wrong', { delay: 0 })
+      .should('have.value', 'wrong');
 
     cy.get('#loginForm').find('button[type="submit"]').click();
     cy.get('.error-message').should('be.visible');
