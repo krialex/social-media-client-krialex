@@ -63,7 +63,7 @@ jobs:
       - name: Start live server
         run: npm run start &
       - name: Wait for server to be ready
-        run: npx wait-on http://127.0.0.1:5500
+        run: npx wait-on http://127.0.0.1:8080
       - name: Run e2e tests
         run: npm run test:e2e:headless
 
