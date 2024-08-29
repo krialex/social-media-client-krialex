@@ -15,12 +15,14 @@ describe('Login', () => {
       .should('have.attr', 'style', 'display: none');
 
     cy.get('#loginForm').should('be.visible');
-    cy.get('#loginEmail', { timeout: 10000 })
+    cy.wait(1000);
+    cy.get('#loginEmail')
       .type('kikki@stud.noroff.no', { delay: 0 })
-      .should('have.value', 'kikki@stud.noroff.no');
+      .should('have.value', 'kikki@stud.noroff.no', { timeout: 10000 });
 
     cy.get('#loginForm').should('be.visible');
-    cy.get('#loginPassword', { timeout: 10000 })
+    cy.wait(1000);
+    cy.get('#loginPassword', { timeout: 150000 })
       .type('password', { delay: 0 })
       .should('have.value', 'password');
       

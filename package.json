@@ -14,7 +14,9 @@
     "test": "npm run test-unit",
     "test-unit": "jest",
     "test:e2e": "cypress open",
-    "test:e2e:headless": "cypress run"
+    "test:e2e:headless": "cypress run",
+    "test:e2e:critical": "cypress run --spec 'cypress/e2e/critical-tests/**/*.cy.js'",
+    "test:e2e:non-critical": "cypress run --spec 'cypress/e2e/non-critical-tests/**/*.cy.js'"
   },
   "keywords": [],
   "author": "Noroff",
